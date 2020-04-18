@@ -9,7 +9,7 @@ public class App
     public static void main(String[] args)
     {
         final AmazonElasticLoadBalancingClient elbClient = new AmazonElasticLoadBalancingClient();
-        elbClient.setEndpoint("http://localhost:5000");
+        elbClient.setEndpoint("http://127.0.0.1:5000");
         final Listener listener = new Listener("HTTP", 3000, 4000);
         final CreateLoadBalancerRequest request = new CreateLoadBalancerRequest("MyLoadBalancer")
             .withListeners(Arrays.asList(listener));
